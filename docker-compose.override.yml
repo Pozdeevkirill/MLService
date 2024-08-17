@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  mlservice.web:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=7001
+      - ASPNETCORE_HTTPS_PORTS=7002
+    ports:
+      - "7001"
+      - "7002"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+  mlservice.machine_learning:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=7003
+      - ASPNETCORE_HTTPS_PORTS=7004
+    ports:
+      - "7003"
+      - "7004"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro

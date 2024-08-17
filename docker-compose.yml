@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+  mlservice.web:
+    image: ${DOCKER_REGISTRY-}mlserviceweb
+    build:
+      context: .
+      dockerfile: MLService.WEB/Dockerfile
+    ports:
+        - 7001:7001
+        - 7002:7002
+  mlservice.machine_learning:
+        image: ${DOCKER_REGISTRY-}mlservice_machine_learning
+        build:
+            context: .
+            dockerfile: Services/MachineLearningSerivce/MLService.MachineLearning/Dockerfile
+        ports:
+            - 7003:7003

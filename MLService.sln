@@ -1,0 +1,88 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.WEB", "MLService.WEB\MLService.WEB.csproj", "{64827853-6918-4685-893E-1D42D35E1AD8}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E5C3CD3C-FEB2-46CF-ACA4-BA37AB98E56A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{21B24890-00A9-4B93-98AA-C83D3129B01D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{2B9E5647-7587-41FA-B23F-9456F3EDCCE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.MassTransit", "Common\MLService.MassTransit\MLService.MassTransit.csproj", "{0914C948-D75F-4E99-B701-60752E2ECCE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MLService", "MLService", "{4A144DFB-01F5-4A68-8D29-902722B2622B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.MachineLearning", "Services\MachineLearningSerivce\MLService.MachineLearning\MLService.MachineLearning.csproj", "{A4A15D5D-DC74-4302-B403-8B91FAB445F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.Enums", "Common\MLService.Enums\MLService.Enums.csproj", "{BADB1C98-A0F9-432D-AF00-2B326823BD7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.MachineLearning.DAL", "Services\MachineLearningSerivce\MLService.MachineLearning.DAL\MLService.MachineLearning.DAL.csproj", "{C631A817-460D-4972-AD83-423D8A04C89E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FBBA5A0E-8EA0-411B-AA53-7A8D91D4C45E}"
+	ProjectSection(SolutionItems) = preProject
+		envsettings.development.json = envsettings.development.json
+		envsettings.json = envsettings.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.Extensions", "Common\MLService.Extensions\MLService.Extensions.csproj", "{D0ED6055-693B-4879-A23B-8760E17C2621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.Attributes", "Common\MLService.Attributes\MLService.Attributes.csproj", "{8EA16612-8CEA-4341-A06C-D1AE42437E56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64827853-6918-4685-893E-1D42D35E1AD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64827853-6918-4685-893E-1D42D35E1AD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64827853-6918-4685-893E-1D42D35E1AD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64827853-6918-4685-893E-1D42D35E1AD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5C3CD3C-FEB2-46CF-ACA4-BA37AB98E56A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5C3CD3C-FEB2-46CF-ACA4-BA37AB98E56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5C3CD3C-FEB2-46CF-ACA4-BA37AB98E56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5C3CD3C-FEB2-46CF-ACA4-BA37AB98E56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0914C948-D75F-4E99-B701-60752E2ECCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0914C948-D75F-4E99-B701-60752E2ECCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0914C948-D75F-4E99-B701-60752E2ECCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0914C948-D75F-4E99-B701-60752E2ECCE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4A15D5D-DC74-4302-B403-8B91FAB445F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4A15D5D-DC74-4302-B403-8B91FAB445F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4A15D5D-DC74-4302-B403-8B91FAB445F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4A15D5D-DC74-4302-B403-8B91FAB445F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BADB1C98-A0F9-432D-AF00-2B326823BD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BADB1C98-A0F9-432D-AF00-2B326823BD7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BADB1C98-A0F9-432D-AF00-2B326823BD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BADB1C98-A0F9-432D-AF00-2B326823BD7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C631A817-460D-4972-AD83-423D8A04C89E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C631A817-460D-4972-AD83-423D8A04C89E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C631A817-460D-4972-AD83-423D8A04C89E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C631A817-460D-4972-AD83-423D8A04C89E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0ED6055-693B-4879-A23B-8760E17C2621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0ED6055-693B-4879-A23B-8760E17C2621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0ED6055-693B-4879-A23B-8760E17C2621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0ED6055-693B-4879-A23B-8760E17C2621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA16612-8CEA-4341-A06C-D1AE42437E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA16612-8CEA-4341-A06C-D1AE42437E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA16612-8CEA-4341-A06C-D1AE42437E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA16612-8CEA-4341-A06C-D1AE42437E56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0914C948-D75F-4E99-B701-60752E2ECCE7} = {21B24890-00A9-4B93-98AA-C83D3129B01D}
+		{4A144DFB-01F5-4A68-8D29-902722B2622B} = {2B9E5647-7587-41FA-B23F-9456F3EDCCE2}
+		{A4A15D5D-DC74-4302-B403-8B91FAB445F4} = {4A144DFB-01F5-4A68-8D29-902722B2622B}
+		{BADB1C98-A0F9-432D-AF00-2B326823BD7B} = {21B24890-00A9-4B93-98AA-C83D3129B01D}
+		{C631A817-460D-4972-AD83-423D8A04C89E} = {4A144DFB-01F5-4A68-8D29-902722B2622B}
+		{D0ED6055-693B-4879-A23B-8760E17C2621} = {21B24890-00A9-4B93-98AA-C83D3129B01D}
+		{8EA16612-8CEA-4341-A06C-D1AE42437E56} = {21B24890-00A9-4B93-98AA-C83D3129B01D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {707E8B8E-FD15-4744-AFDE-2A9A177BD5AD}
+	EndGlobalSection
+EndGlobal

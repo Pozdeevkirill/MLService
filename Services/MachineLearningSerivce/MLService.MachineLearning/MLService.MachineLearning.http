@@ -1,0 +1,6 @@
+@MLService.MachineLearning_HostAddress = http://localhost:5122
+
+GET {{MLService.MachineLearning_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
