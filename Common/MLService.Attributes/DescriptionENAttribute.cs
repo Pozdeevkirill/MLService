@@ -3,9 +3,9 @@
 namespace MLService.Attributes
 {
     [AttributeUsage(AttributeTargets.All)]
-    public class DescriptionRUAttribute : DescriptionAttribute
+    public class DescriptionENAttribute : DescriptionAttribute
     {
-        public DescriptionRUAttribute(string description) : base(description)
+        public DescriptionENAttribute(string description) : base(description)
         {
         }
     }

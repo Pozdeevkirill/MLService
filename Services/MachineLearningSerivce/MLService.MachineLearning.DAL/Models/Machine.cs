@@ -1,11 +1,12 @@
 ﻿using MLService.Enums;
+using MLService.Infrastructure.Models;
 
 namespace MLService.MachineLearning.DAL.Models
 {
     /// <summary>
     /// Объект машины
     /// </summary>
-    public class Machine
+    public class Machine : DeletableEntity
     {
         /// <summary>
         /// Название машины

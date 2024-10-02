@@ -1,28 +1,31 @@
-﻿using System.ComponentModel;
+﻿using MLService.Attributes;
 
 namespace MLService.Enums
-{   
+{
     /// <summary>
-    /// Machine type
+    /// Тип машины
     /// </summary>
     public enum MachineType
     {
         /// <summary>
-        /// Undefined
+        /// Не определено
         /// </summary>
-        [Description("Не определено")]
+        [DescriptionRU("Не определено")]
+        [DescriptionEN("Undefined")]
         Undefined,
 
         /// <summary>
-        /// Image classification machine
+        /// Классификатор изображений
         /// </summary>
-        [Description("Классификатор изображений")]
+        [DescriptionRU("Классификатор изображений")]
+        [DescriptionEN("Image classification")]
         ImageClassification,
 
         /// <summary>
-        /// Text classification machine
+        /// Класификатор текста
         /// </summary>
-        [Description("Класификатор текста")]
+        [DescriptionRU("Класификатор текста")]
+        [DescriptionEN("Text classification")]
         TextClassification,
     }
 }

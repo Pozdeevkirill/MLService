@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Common\MLService.Enums\MLService.Enums.csproj" />
+    <ProjectReference Include="..\..\..\Common\MLService.Infrastructure\MLService.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

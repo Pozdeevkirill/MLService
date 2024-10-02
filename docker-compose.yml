@@ -1,6 +1,11 @@
 version: '3.4'
 
 services:
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672" 
+      - "15672:15672" 
   mlservice.web:
     image: ${DOCKER_REGISTRY-}mlserviceweb
     build:
@@ -9,10 +14,16 @@ services:
     ports:
         - 7001:7001
         - 7002:7002
+    volumes: 
+        - ./commonsettings.yaml:/app/commonsettings.yaml
+        - ./commonsettings.development.yaml:/app/commonsettings.development.yaml
   mlservice.machine_learning:
-        image: ${DOCKER_REGISTRY-}mlservice_machine_learning
-        build:
-            context: .
-            dockerfile: Services/MachineLearningSerivce/MLService.MachineLearning/Dockerfile
-        ports:
-            - 7003:7003
+    image: ${DOCKER_REGISTRY-}mlservice_machine_learning
+    build:
+        context: .
+        dockerfile: Services/MachineLearningSerivce/MLService.MachineLearning/Dockerfile
+    ports:
+        - 7003:7003
+    volumes: 
+        - ./commonsettings.yaml:/app/commonsettings.yaml
+        - ./commonsettings.development.yaml:/app/commonsettings.development.yaml

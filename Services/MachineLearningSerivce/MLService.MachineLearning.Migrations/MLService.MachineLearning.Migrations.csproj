@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MLService.Enums\MLService.Enums.csproj" />
-  </ItemGroup>
-
 </Project>

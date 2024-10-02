@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,10 +8,26 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
-
+	<ItemGroup>
+		<None Include="..\..\..\commonsettings.development.yaml" Link="commonsettings.development.yaml" />
+		<None Include="..\..\..\commonsettings.yaml" Link="commonsettings.yaml" />
+	</ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.2.5" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\MLService.Extensions\MLService.Extensions.csproj" />
+    <ProjectReference Include="..\..\..\Common\MLService.MassTransit\MLService.MassTransit.csproj" />
+    <ProjectReference Include="..\MLService.MachineLearning.BAL\MLService.MachineLearning.BAL.csproj" />
+    <ProjectReference Include="..\MLService.MachineLearning.DAL\MLService.MachineLearning.DAL.csproj" />
   </ItemGroup>
 
 </Project>

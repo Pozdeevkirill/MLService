@@ -1,6 +1,11 @@
-﻿namespace MLService.MachineLearning.DAL.Data
+﻿using Microsoft.EntityFrameworkCore;
+using MLService.MachineLearning.DAL.Models;
+
+namespace MLService.MachineLearning.DAL.Data;
+public class MachineLearnDbContext : DbContext
 {
-    public class MachineLearnDbContext
+    public DbSet<Machine> Machines { get; set; } 
+    public MachineLearnDbContext(DbContextOptions options) : base(options)
     {
     }
 }

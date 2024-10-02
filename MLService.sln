@@ -19,17 +19,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.MachineLearning",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.Enums", "Common\MLService.Enums\MLService.Enums.csproj", "{BADB1C98-A0F9-432D-AF00-2B326823BD7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.MachineLearning.DAL", "Services\MachineLearningSerivce\MLService.MachineLearning.DAL\MLService.MachineLearning.DAL.csproj", "{C631A817-460D-4972-AD83-423D8A04C89E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.MachineLearning.DAL", "Services\MachineLearningSerivce\MLService.MachineLearning.DAL\MLService.MachineLearning.DAL.csproj", "{C631A817-460D-4972-AD83-423D8A04C89E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FBBA5A0E-8EA0-411B-AA53-7A8D91D4C45E}"
 	ProjectSection(SolutionItems) = preProject
-		envsettings.development.json = envsettings.development.json
-		envsettings.json = envsettings.json
+		commonsettings.development.yaml = commonsettings.development.yaml
+		commonsettings.yaml = commonsettings.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.Extensions", "Common\MLService.Extensions\MLService.Extensions.csproj", "{D0ED6055-693B-4879-A23B-8760E17C2621}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.Extensions", "Common\MLService.Extensions\MLService.Extensions.csproj", "{D0ED6055-693B-4879-A23B-8760E17C2621}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.Attributes", "Common\MLService.Attributes\MLService.Attributes.csproj", "{8EA16612-8CEA-4341-A06C-D1AE42437E56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.Attributes", "Common\MLService.Attributes\MLService.Attributes.csproj", "{8EA16612-8CEA-4341-A06C-D1AE42437E56}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.MachineLearning.BAL", "Services\MachineLearningSerivce\MLService.MachineLearning.BAL\MLService.MachineLearning.BAL.csproj", "{8C1D25C4-ED07-4BB8-AFF6-050C56B9A38F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.Infrastructure", "Common\MLService.Infrastructure\MLService.Infrastructure.csproj", "{1EE466BF-ABE7-4A93-9295-BFB15BA267DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.MachineLearning.Migrations", "Services\MachineLearningSerivce\MLService.MachineLearning.Migrations\MLService.MachineLearning.Migrations.csproj", "{9F17D360-1D80-4D4D-BC42-91224400EFE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +75,18 @@ Global
 		{8EA16612-8CEA-4341-A06C-D1AE42437E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EA16612-8CEA-4341-A06C-D1AE42437E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EA16612-8CEA-4341-A06C-D1AE42437E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1D25C4-ED07-4BB8-AFF6-050C56B9A38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1D25C4-ED07-4BB8-AFF6-050C56B9A38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1D25C4-ED07-4BB8-AFF6-050C56B9A38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1D25C4-ED07-4BB8-AFF6-050C56B9A38F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE466BF-ABE7-4A93-9295-BFB15BA267DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE466BF-ABE7-4A93-9295-BFB15BA267DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE466BF-ABE7-4A93-9295-BFB15BA267DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE466BF-ABE7-4A93-9295-BFB15BA267DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F17D360-1D80-4D4D-BC42-91224400EFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F17D360-1D80-4D4D-BC42-91224400EFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F17D360-1D80-4D4D-BC42-91224400EFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F17D360-1D80-4D4D-BC42-91224400EFE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +99,9 @@ Global
 		{C631A817-460D-4972-AD83-423D8A04C89E} = {4A144DFB-01F5-4A68-8D29-902722B2622B}
 		{D0ED6055-693B-4879-A23B-8760E17C2621} = {21B24890-00A9-4B93-98AA-C83D3129B01D}
 		{8EA16612-8CEA-4341-A06C-D1AE42437E56} = {21B24890-00A9-4B93-98AA-C83D3129B01D}
+		{8C1D25C4-ED07-4BB8-AFF6-050C56B9A38F} = {4A144DFB-01F5-4A68-8D29-902722B2622B}
+		{1EE466BF-ABE7-4A93-9295-BFB15BA267DF} = {21B24890-00A9-4B93-98AA-C83D3129B01D}
+		{9F17D360-1D80-4D4D-BC42-91224400EFE6} = {4A144DFB-01F5-4A68-8D29-902722B2622B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {707E8B8E-FD15-4744-AFDE-2A9A177BD5AD}

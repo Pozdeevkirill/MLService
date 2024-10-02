@@ -1,0 +1,17 @@
+MLService:
+    DbType: MsSql
+    ConnectionString: Server=(localdb)\mssqllocaldb;Database=MachineLearnDB;Trusted_Connection=True;
+    Queue: MLService_Queue
+    Host: rabbitmq://mlservice
+    Endpoints: 
+        Test: test
+
+WEB:
+    Queue: Web_Queue
+
+RabbitMQ: 
+    UserName: guest
+    Password: guest
+
+MassTransit:
+    Host: rabbitmq

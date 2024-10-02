@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MLService.Attributes\MLService.Attributes.csproj" />
+  </ItemGroup>
+
 </Project>
