@@ -13,4 +13,4 @@ RabbitMQ:
     Password: guest
 
 MassTransit:
-    Host: rabbitmq://mlservice
+    Host: MLService.rabbitmq://mlservice

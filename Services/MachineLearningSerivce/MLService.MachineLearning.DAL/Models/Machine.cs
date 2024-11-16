@@ -8,6 +8,14 @@ namespace MLService.MachineLearning.DAL.Models
     /// </summary>
     public class Machine : DeletableEntity
     {
+        public Machine() { }
+
+        public Machine(string name, string description, MachineType type)
+        {
+            Name = name;
+            Description = description;
+            MachineType = type;
+        }
         /// <summary>
         /// Название машины
         /// </summary>

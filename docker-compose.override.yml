@@ -1,25 +1,38 @@
 version: '3.4'
 
 services:
+  MLService.rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672" 
+      - "15672:15672" 
   mlservice.web:
+    image: ${DOCKER_REGISTRY-}mlserviceweb
+    build:
+      context: .
+      dockerfile: MLService.WEB/Dockerfile
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=7001
-      - ASPNETCORE_HTTPS_PORTS=7002
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ASPNETCORE_URLS=https://+:443;http://+:80
     ports:
-      - "7001"
-      - "7002"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+        - "7001:443"
+        - "7002:80"
+    volumes: 
+        - ./commonsettings.yaml:/app/commonsettings.yaml
+        - ./commonsettings.development.yaml:/app/commonsettings.development.yaml
+        - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
   mlservice.machine_learning:
+    image: ${DOCKER_REGISTRY-}mlservice_machine_learning
+    build:
+        context: .
+        dockerfile: Services/MachineLearningSerivce/MLService.MachineLearning/Dockerfile
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=7003
-      - ASPNETCORE_HTTPS_PORTS=7004
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ASPNETCORE_URLS=https://+:443;http://+:80
     ports:
-      - "7003"
-      - "7004"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+        - "7003:443"
+        - "7004:80"  
+    volumes: 
+        - ./commonsettings.yaml:/app/commonsettings.yaml
+        - ./commonsettings.development.yaml:/app/commonsettings.development.yaml
+        - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

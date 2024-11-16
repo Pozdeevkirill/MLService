@@ -4,11 +4,9 @@ using MLService.Extensions;
 using MLService.Infrastructure;
 using MLService.MachineLearning.BAL.Services;
 using MLService.MachineLearning.BAL.Services.Impl;
-using MLService.MachineLearning.Consumers;
 using MLService.MachineLearning.DAL.Data;
 using System.Reflection;
 using MLService.Infrastructure.Models.Settings;
-using MLService.Infrastructure.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,8 +20,6 @@ builder.Services.AddMassTransit(config =>
 {
     config.AddConsumers(Assembly.GetExecutingAssembly());
 
-   
-
     config.UsingRabbitMq((context, cfg) =>
     {
         cfg.Host(AppSettings.MassTransit.Host, 5672, "/", h =>
@@ -32,13 +28,6 @@ builder.Services.AddMassTransit(config =>
             h.Password(AppSettings.RabbitMq.Password);
         });
         cfg.ConfigureEndpoints(context);
-        
-        /*cfg.ReceiveEndpoint(AppSettings.MLService.Endpoints.Test, e =>
-        {
-            e.PrefetchCount = 20;
-            e.UseMessageRetry(r => r.Interval(2, 100));
-            e.ConfigureConsumer<CreateMachineConsumer>(context);
-        });*/
     });
 });
 

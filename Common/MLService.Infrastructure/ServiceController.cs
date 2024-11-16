@@ -11,23 +11,24 @@ namespace MLService.Infrastructure
 
         public ServiceController()
         {
+            
+
+           // _rabbitMqUrl = new Uri(RabbitMqUrl);
+        }
+
+        public ServiceController(IBusControl busControl)
+        {
             if (RabbitMqUrl == null || RabbitMqUrl == string.Empty)
                 throw new Exception("Не установленна ссылка сервиса");
 
-            _rabbitMqUrl = new Uri(RabbitMqUrl);
-        }
-
-        public ServiceController(IBusControl busControl, string rabbitMqUrl)
-        {
             BusControl = busControl;
-            RabbitMqUrl = rabbitMqUrl;
         }
 
         protected async Task<TOut> GetResponseRabbitTask<TIn, TOut>(TIn request)
             where TIn : class
             where TOut : class
         {
-            var client = BusControl.CreateRequestClient<TIn>(_rabbitMqUrl);
+            var client = BusControl.CreateRequestClient<TIn>();
             var response = await client.GetResponse<TOut>(request);
             return response.Message;
         }

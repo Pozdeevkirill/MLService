@@ -14,12 +14,13 @@ namespace MLService.MachineLearning.Controllers
     {
         private readonly ILearnService _learnService;
         private readonly IPublishEndpoint _publishEndpoint;
-        protected override string RabbitMqUrl => AppSettings.MassTransit.Host + AppSettings.MLService.Endpoints.Test;
+        protected override string RabbitMqUrl => AppSettings.MassTransit.Host + "/" + AppSettings.MLService.Endpoints.Test;
 
 
         public MLController(
             IPublishEndpoint publishEndpoint,
-            ILearnService learnService) : base()
+            ILearnService learnService,
+            IBusControl busControl) : base(busControl)
         {
             _publishEndpoint = publishEndpoint;
             _learnService = learnService;           

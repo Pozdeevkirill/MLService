@@ -11,20 +11,18 @@ namespace MLService.WEB.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IBus _bus;
         private readonly IPublishEndpoint _publishEndpoint;
 
 
-        public HomeController(ILogger<HomeController> logger, IBus bus, IPublishEndpoint publishEndpoint)
+        public HomeController(ILogger<HomeController> logger,  IPublishEndpoint publishEndpoint)
         {
-            _bus = bus; 
             _logger = logger;
             _publishEndpoint = publishEndpoint;
         }
 
         public async Task<IActionResult> Index()
         {
-            _logger.LogInformation(AppSettings.MLService.ConnectionString);
+            /*_logger.LogInformation(AppSettings.MLService.ConnectionString);
             var message = new CreateMachineRequest()
             {
                 MachineType = MachineType.TextClassification,
@@ -37,11 +35,7 @@ namespace MLService.WEB.Controllers
                 MachineType = message.MachineType,
                 MachineDescription = message.MachineDescription,
                 MachineName = message.MachineName,
-            });
-
-            /*var uri = new Uri("rabbitmq/test");
-            var endpoint = await _bus.GetSendEndpoint(uri);
-            await endpoint.Send(message);*/
+            });*/
 
             return Accepted();
         }

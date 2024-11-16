@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using MLService.Infrastructure.Models;
 using MLService.MachineLearning.DAL.Data;
+using MLService.MachineLearning.DAL.Models;
 using MLService.MassTransit.MLService.Requests;
 
 namespace MLService.MachineLearning.BAL.Services.Impl
@@ -19,8 +20,12 @@ namespace MLService.MachineLearning.BAL.Services.Impl
 
         public IdWithName CreateMachine(CreateMachineRequest request)
         {
-            _log.LogInformation("Create machine");
-            return new(Guid.NewGuid(), "тра-та-та");
+            _log.LogInformation("Create machine..");
+            var machine = new Machine(request.MachineName, request.MachineDescription, request.MachineType);
+            _context.Add(machine);
+            _context.SaveChanges();
+            _log.LogInformation("Machine succsesfull created!");
+            return new(machine.Id, machine.Name);
         }
 
         public void StartLearn()
