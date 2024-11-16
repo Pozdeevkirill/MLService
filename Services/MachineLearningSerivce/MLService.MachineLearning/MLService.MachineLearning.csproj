@@ -9,8 +9,9 @@
     <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
 	<ItemGroup>
-		<None Include="..\..\..\commonsettings.development.yaml" Link="commonsettings.development.yaml" />
-		<None Include="..\..\..\commonsettings.yaml" Link="commonsettings.yaml" />
+		<Content Include="..\..\..\serilogConfig.json" Link="serilogConfig.json" />
+		<Content Include="..\commonsettings.development.yaml" Link="commonsettings.development.yaml" />
+		<Content Include="..\commonsettings.yaml" Link="commonsettings.yaml" />
 	</ItemGroup>
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="8.2.5" />
@@ -20,6 +21,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+    <PackageReference Include="Serilog" Version="4.1.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 

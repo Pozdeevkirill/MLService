@@ -6,21 +6,13 @@ namespace MLService.Infrastructure
     public class ServiceController : ControllerBase
     {
         protected readonly IBusControl BusControl;
-        protected virtual string RabbitMqUrl { get; set; }
-        private readonly Uri _rabbitMqUrl;
 
         public ServiceController()
         {
-            
-
-           // _rabbitMqUrl = new Uri(RabbitMqUrl);
         }
 
         public ServiceController(IBusControl busControl)
         {
-            if (RabbitMqUrl == null || RabbitMqUrl == string.Empty)
-                throw new Exception("Не установленна ссылка сервиса");
-
             BusControl = busControl;
         }
 

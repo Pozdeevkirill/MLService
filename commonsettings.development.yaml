@@ -1,6 +1,6 @@
 MLService:
     DbType: MsSql
-    ConnectionString: Server=(localdb)\mssqllocaldb;Database=MachineLearnDB;Trusted_Connection=True;
+    ConnectionString: Server=(localdb)\mssqllocaldb;Database=MachineLearnDB;Trusted_Connection=True;Encrypt=false;
     Queue: MLService_Queue
     Host: MLService.rabbitmq://mlservice
     Endpoints: 

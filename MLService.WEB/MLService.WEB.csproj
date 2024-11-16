@@ -8,6 +8,12 @@
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
+
+  <ItemGroup>
+	  <Content Include="..\commonsettings.development.yaml" Link="commonsettings.development.yaml" />
+	  <Content Include="..\commonsettings.yaml" Link="commonsettings.yaml" />
+      <Content Include="..\serilogConfig.json" Link="serilogConfig.json" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MassTransit" Version="8.2.5" />
     <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
@@ -23,8 +29,4 @@
     <ProjectReference Include="..\Common\MLService.Extensions\MLService.Extensions.csproj" />
     <ProjectReference Include="..\Common\MLService.MassTransit\MLService.MassTransit.csproj" />
   </ItemGroup>
-	<ItemGroup>
-		<None Include="..\commonsettings.development.yaml" Link="commonsettings.development.yaml" />
-		<None Include="..\commonsettings.yaml" Link="commonsettings.yaml" />
-	</ItemGroup>
 </Project>

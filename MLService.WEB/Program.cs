@@ -1,6 +1,7 @@
 using MLService.Extensions;
 using MassTransit;
 using MLService.Infrastructure.Models.Settings;
+using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +9,7 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
 //Add custom configuration
 builder.AddCustomConfigurations();
+builder.AddLoggerConfiguration();
 
 builder.Services.AddMassTransit(x =>
 {
@@ -32,6 +34,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -4,14 +4,13 @@ using MLService.MassTransit.MLService.Requests;
 
 namespace MLService.MachineLearning.Consumers
 {
-    public class CreateMachineConsumer : MLServiceBaseConsumer, IConsumer<CreateMachineRequest>
+    public class CreateMachineConsumer : MLServiceBaseConsumer<CreateMachineRequest>
     {
         public CreateMachineConsumer(ILearnService learnService) : base(learnService) { }
 
-        public Task Consume(ConsumeContext<CreateMachineRequest> request)
+        public override Task Consume(ConsumeContext<CreateMachineRequest> request)
         {
-            //LearnService.CreateMachineConsumer(request);
-            var test = request.Message;
+            LearnService.CreateMachine(request.Message);
 
             return Task.CompletedTask;
         }

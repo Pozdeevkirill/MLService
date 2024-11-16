@@ -7,10 +7,12 @@ using MLService.MachineLearning.BAL.Services.Impl;
 using MLService.MachineLearning.DAL.Data;
 using System.Reflection;
 using MLService.Infrastructure.Models.Settings;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddCustomConfigurations();
+builder.AddLoggerConfiguration();
 
 #region DI
 builder.Services.AddScoped<ILearnService, LearnService>();
@@ -68,6 +70,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 

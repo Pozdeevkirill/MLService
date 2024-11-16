@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		commonsettings.development.yaml = commonsettings.development.yaml
 		commonsettings.yaml = commonsettings.yaml
+		serilogConfig.json = serilogConfig.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.Extensions", "Common\MLService.Extensions\MLService.Extensions.csproj", "{D0ED6055-693B-4879-A23B-8760E17C2621}"
@@ -35,7 +36,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.MachineLearning.B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.Infrastructure", "Common\MLService.Infrastructure\MLService.Infrastructure.csproj", "{1EE466BF-ABE7-4A93-9295-BFB15BA267DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLService.MachineLearning.Migrations", "Services\MachineLearningSerivce\MLService.MachineLearning.Migrations\MLService.MachineLearning.Migrations.csproj", "{9F17D360-1D80-4D4D-BC42-91224400EFE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLService.MachineLearning.Migrations", "Services\MachineLearningSerivce\MLService.MachineLearning.Migrations\MLService.MachineLearning.Migrations.csproj", "{9F17D360-1D80-4D4D-BC42-91224400EFE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

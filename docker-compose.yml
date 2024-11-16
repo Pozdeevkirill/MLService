@@ -20,6 +20,7 @@ services:
     volumes: 
         - ./commonsettings.yaml:/app/commonsettings.yaml
         - ./commonsettings.development.yaml:/app/commonsettings.development.yaml
+        - ./serilogConfig.json:/app/serilogConfig.json
         - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
   mlservice.machine_learning:
     image: ${DOCKER_REGISTRY-}mlservice_machine_learning
@@ -30,9 +31,10 @@ services:
         - ASPNETCORE_ENVIRONMENT=Development
         - ASPNETCORE_URLS=https://+:443;http://+:80
     ports:
-        - "443"
-        - "80"  
+        - "7003:443"
+        - "7004:80"  
     volumes: 
         - ./commonsettings.yaml:/app/commonsettings.yaml
         - ./commonsettings.development.yaml:/app/commonsettings.development.yaml
+        - ./serilogConfig.json:/app/serilogConfig.json
         - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro

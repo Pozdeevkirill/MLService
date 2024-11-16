@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using MLService.Infrastructure.Models.Settings;
+using Serilog;
 
 namespace MLService.Extensions
 {
@@ -14,6 +15,15 @@ namespace MLService.Extensions
             builder.Configuration.ConfigureSettingsClass();
             return builder;
         } 
+
+        public static IHostApplicationBuilder AddLoggerConfiguration(this IHostApplicationBuilder builder)
+        {
+            builder.Services.AddSerilog((services, lc) => lc
+                .ReadFrom.Configuration(builder.Configuration)
+                .ReadFrom.Services(services)
+                .Enrich.FromLogContext());
+            return builder;
+        }
 
         public static IConfigurationBuilder AddCustomConfigurationFile(this IConfigurationBuilder builder)
         {
@@ -29,9 +39,10 @@ namespace MLService.Extensions
 
            try
            {
-               builder
-                  .AddYamlFile(Path.Combine(solutionDirectory.FullName, "commonsettings.yaml"), optional: false, reloadOnChange: false)
-                  .AddYamlFile(Path.Combine(solutionDirectory.FullName, "commonsettings.development.yaml"), optional: false, reloadOnChange: false);
+                builder
+                   .AddYamlFile(Path.Combine(solutionDirectory.FullName, "commonsettings.yaml"), optional: false, reloadOnChange: false)
+                   .AddYamlFile(Path.Combine(solutionDirectory.FullName, "commonsettings.development.yaml"), optional: false, reloadOnChange: false)
+                   .AddJsonFile(Path.Combine(solutionDirectory.FullName, "serilogConfig.json"), optional: false, reloadOnChange: false);
            }
            catch(Exception ex) {
                throw new Exception(ErrorEmptyPathMessage + " Exception: " + ex.Message);
