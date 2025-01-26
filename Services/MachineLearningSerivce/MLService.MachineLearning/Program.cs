@@ -8,6 +8,7 @@ using MLService.MachineLearning.DAL.Data;
 using System.Reflection;
 using MLService.Infrastructure.Models.Settings;
 using Serilog;
+using MLService.Enums.Enums;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,7 +52,7 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<MachineLearnDbContext>(x =>
     {
-        if (AppSettings.MLService.DbType == "MsSql")
+        if (AppSettings.MLService.DbType == DatabaseType.SqlServer)
         {
             x.UseSqlServer(AppSettings.MLService.ConnectionString, y => y.MigrationsAssembly("MLService.MachineLearning.Migrations"));
         }

@@ -22,7 +22,7 @@ namespace MLService.WEB.Controllers
 
         public async Task<IActionResult> Index()
         {
-            /*_logger.LogInformation(AppSettings.MLService.ConnectionString);
+            _logger.LogInformation(AppSettings.MLService.ConnectionString);
             var message = new CreateMachineRequest()
             {
                 MachineType = MachineType.TextClassification,
@@ -35,7 +35,7 @@ namespace MLService.WEB.Controllers
                 MachineType = message.MachineType,
                 MachineDescription = message.MachineDescription,
                 MachineName = message.MachineName,
-            });*/
+            });
 
             return Accepted();
         }

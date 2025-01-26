@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MLService.Enums\MLService.Enums.csproj" />
+  </ItemGroup>
+
 </Project>

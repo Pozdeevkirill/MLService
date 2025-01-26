@@ -1,14 +1,16 @@
-﻿namespace MLService.Infrastructure.Interfaces.Settings
+﻿using MLService.Enums.Enums;
+
+namespace MLService.Infrastructure.Interfaces.Settings
 {
     /// <summary>
     /// Интерфейс настроек микросервиса с подключением к БД
     /// </summary>
-    public interface IDbServiceSettings
+    public interface IDbSettings
     {
         /// <summary>
         /// Тип бд
         /// </summary>
-        public abstract string DbType { get; set; }
+        public abstract DatabaseType DbType { get; }
 
         /// <summary>
         /// Строка подключения
